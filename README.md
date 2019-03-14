@@ -23,7 +23,7 @@ Alternative block explorers:
 Download and compile recent Aeon into your home folder:
 
 ```bash
-# first install monero dependecines
+# first install aeon dependecines
 sudo apt update
 
 sudo apt install git build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libcurl4-openssl-dev libgtest-dev libreadline-dev libzmq3-dev libsodium-dev libpcsclite-dev
@@ -62,7 +62,7 @@ mkdir build && cd build
 # create the makefile
 cmake ..
 
-# altearnatively can use: cmake -DAEON_DIR=/path/to/aeon_folder ..
+# alternatively can use: cmake -DAEON_DIR=/path/to/aeon_folder ..
 # if aeon is not in ~/aeon
 #
 # also can build with ASAN (sanitizers), for example
@@ -78,19 +78,19 @@ To run it:
 ./aeonblocks
 ```
 
-By default it will look for blockchain in its default location i.e., `~/.bitmonero/lmdb`.
+By default it will look for blockchain in its default location i.e., `~/.aeon/lmdb`.
 You can use `-b` option if its in different location.
 
 For example:
 
 ```bash
-./aeonblocks -b /home/mwo/non-defult-monero-location/lmdb/
+./aeonblocks -b /home/mwo/non-defult-aeon-location/lmdb/
 ```
 
 Example output:
 
 ```bash
-[mwo@arch onion-monero-blockchain-explorer]$ ./aeonblocks
+[mwo@arch onion-aeon-blockchain-explorer]$ ./aeonblocks
 2016-May-28 10:04:49.160280 Blockchain initialized. last block: 1056761, d0.h0.m12.s47 time ago, current difficulty: 1517857750
 (2016-05-28 02:04:49) [INFO    ] Crow/0.1 server is running, local port 8081
 ```
@@ -124,7 +124,7 @@ aeonblocks, Onion Aeon Blockchain Explorer:
                                         enable users to have the index page on
                                         autorefresh
   --enable-emission-monitor [=arg(=1)] (=0)
-                                        enable Monero total emission monitoring
+                                        enable Aeon total emission monitoring
                                         thread
   -p [ --port ] arg (=8081)             default explorer port
   --testnet-url arg                     you can specify testnet url, if you run
@@ -143,30 +143,30 @@ aeonblocks, Onion Aeon Blockchain Explorer:
   --mempool-refresh-time arg (=5)       time, in seconds, for each refresh of
                                         mempool state
   -b [ --bc-path ] arg                  path to lmdb folder of the blockchain,
-                                        e.g., ~/.bitmonero/lmdb
+                                        e.g., ~/.aeon/lmdb
   --ssl-crt-file arg                    path to crt file for ssl (https)
                                         functionality
   --ssl-key-file arg                    path to key file for ssl (https)
                                         functionality
-  -d [ --deamon-url ] arg (=http:://127.0.0.1:18081)
-                                        Monero deamon url
+  -d [ --deamon-url ] arg (=http:://127.0.0.1:11181)
+                                        Aeon deamon url
 ```
 
 Example usage, defined as bash aliases.
 
 ```bash
 # for mainnet explorer
-alias aeonblocksmainnet='~/onion-monero-blockchain-explorer/build/aeonblocks    --port 8081 --testnet-url "http://139.162.32.245:8082" --enable-pusher --enable-emission-monitor'
+alias aeonblocksmainnet='~/onion-aeon-blockchain-explorer/build/aeonblocks    --port 8081 --testnet-url "http://139.162.32.245:8082" --enable-pusher --enable-emission-monitor'
 
 # for testnet explorer
-alias aeonblockstestnet='~/onion-monero-blockchain-explorer/build/aeonblocks -t --port 8082 --mainnet-url "http://139.162.32.245:8081" --enable-pusher --enable-emission-monitor'
+alias aeonblockstestnet='~/onion-aeon-blockchain-explorer/build/aeonblocks -t --port 8082 --mainnet-url "http://139.162.32.245:8081" --enable-pusher --enable-emission-monitor'
 ```
 
 These are aliases similar to those used for http://139.162.32.245:8081/ and http://139.162.32.245:8082/, respectively.
 
-## Enable Monero emission
+## Enable Aeon emission
 
-Obtaining current Monero emission amount is not straight forward. Thus, by default it is
+Obtaining current Aeon emission amount is not straight forward. Thus, by default it is
 disabled. To enable it use `--enable-emission-monitor` flag, e.g.,
 
 
@@ -178,10 +178,10 @@ This flag will enable emission monitoring thread. When started, the thread
  will initially scan the entire blockchain, and calculate the cumulative emission based on each block.
 Since it is a separate thread, the explorer will work as usual during this time.
 Every 10000 blocks, the thread will save current emission in a file, by default,
- in `~/.bitmonero/lmdb/emission_amount.txt`. For testnet or stagenet networks,
- it is `~/.bitmonero/testnet/lmdb/emission_amount.txt` or `~/.bitmonero/stagenet/lmdb/emission_amount.txt`. This file is used so that we don't
+ in `~/.aeon/lmdb/emission_amount.txt`. For testnet or stagenet networks,
+ it is `~/.aeon/testnet/lmdb/emission_amount.txt` or `~/.aeon/stagenet/lmdb/emission_amount.txt`. This file is used so that we don't
  need to rescan entire blockchain whenever the explorer is restarted. When the
- explorer restarts, the thread will first check if `~/.bitmonero/lmdb/emission_amount.txt`
+ explorer restarts, the thread will first check if `~/.aeon/lmdb/emission_amount.txt`
  is present, read its values, and continue from there if possible. Subsequently, only the initial
  use of the tread is time consuming. Once the thread scans the entire blockchain, it updates
  the emission amount using new blocks as they come. Since the explorer writes this file, there can
@@ -195,10 +195,10 @@ Every 10000 blocks, the thread will save current emission in a file, by default,
  displayed on the front page, e.g., :
 
 ```
-Monero emission (fees) is 14485540.430 (52545.373) as of 1313448 block
+Aeon emission (fees) is 14485540.430 (52545.373) as of 1313448 block
 ```
 
-The values given, can be checked using Monero daemon's  `print_coinbase_tx_sum` command.
+The values given, can be checked using Aeon daemon's  `print_coinbase_tx_sum` command.
 For example, for the above example: `print_coinbase_tx_sum 0 1313449`.
 
 To disable the monitor, simply restart the explorer without `--enable-emission-monitor` flag.
@@ -714,7 +714,7 @@ var api_minor = response.data.api & 0xffff;
 
 #### api/rawblock/<block_number|block_hash>
 
-Return raw json block data, as represented in Monero.
+Return raw json block data, as represented in Aeon.
 
 ```bash
 curl  -w "\n" -X GET "http://139.162.32.245:8081/api/rawblock/1293257"
@@ -724,7 +724,7 @@ Example result not shown.
 
 #### api/rawtransaction/<tx_hash>
 
-Return raw json tx data, as represented in Monero.
+Return raw json tx data, as represented in Aeon.
 
 ```bash
 curl  -w "\n" -X GET "http://139.162.32.245:8081/api/rawtransaction/6093260dbe79fd6277694d14789dc8718f1bd54457df8bab338c2efa3bb0f03d"
