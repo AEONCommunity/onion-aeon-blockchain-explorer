@@ -62,8 +62,8 @@ mkdir build && cd build
 # create the makefile
 cmake ..
 
-# altearnatively can use: cmake -DMONERO_DIR=/path/to/monero_folder ..
-# if monero is not in ~/monero
+# altearnatively can use: cmake -DAEON_DIR=/path/to/aeon_folder ..
+# if aeon is not in ~/aeon
 #
 # also can build with ASAN (sanitizers), for example
 # cmake -DSANITIZE_ADDRESS=On ..
