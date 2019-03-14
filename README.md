@@ -13,6 +13,7 @@ Mainnet
 Alternative block explorers:
 
 - [http://aeon.lol/](http://aeon.lol/)
+- [https://aeonblockexplorer.com/](https://aeonblockexplorer.com/)
 
 
 ## Compilation on Ubuntu 16.04
