@@ -51,10 +51,10 @@ as follows:
 cd ~
 
 # download the source code
-git clone https://github.com/moneroexamples/onion-monero-blockchain-explorer.git
+git clone https://github.com/aeoncommunity/onion-aeon-blockchain-explorer.git
 
 # enter the downloaded sourced code folder
-cd onion-monero-blockchain-explorer
+cd onion-aeon-blockchain-explorer
 
 # make a build folder and enter it
 mkdir build && cd build
