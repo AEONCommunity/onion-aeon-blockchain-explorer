@@ -38,7 +38,7 @@ cd aeon/
 # checkout last aeon version
 git checkout master
 
-make
+USE_SINGLE_BUILDDIR=1 make
 ```
 
 ##### Compile and run the explorer
