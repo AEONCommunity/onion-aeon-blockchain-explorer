@@ -50,6 +50,8 @@ as follows:
 # go to home folder if still in ~/aeon
 cd ~
 
+Note: For Ubuntu 18.04 you may need to install libcurl3-dev for building Aeonblocks.
+
 # download the source code
 git clone https://github.com/aeoncommunity/onion-aeon-blockchain-explorer.git
 
