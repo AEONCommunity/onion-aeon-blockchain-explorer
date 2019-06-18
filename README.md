@@ -14,6 +14,7 @@ Alternative block explorers:
 
 - [http://aeon.lol/](http://aeon.lol/)
 - [https://aeonblockexplorer.com/](https://aeonblockexplorer.com/)
+- [https://aeonblockchecker.ninja:8081](https://aeonblockchcker.ninja:8081)
 
 
 ## Compilation on Ubuntu 16.04 and 18.04
@@ -23,7 +24,7 @@ Alternative block explorers:
 Download and compile recent Aeon into your home folder:
 
 ```bash
-# first install aeon dependecines
+# first install aeon dependencies
 sudo apt update
 
 For 16.04
