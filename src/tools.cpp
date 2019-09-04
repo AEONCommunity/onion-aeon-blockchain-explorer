@@ -1299,4 +1299,4 @@ tx_to_hex(transaction const& tx)
         return (cryptonote::difficulty_type(high) << 64) + low;
     }
     
-}         }
+}
