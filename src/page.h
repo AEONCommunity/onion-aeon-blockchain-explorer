@@ -890,7 +890,7 @@ index2(uint64_t page_no = 0, bool refresh_page = false)
     get_metric_prefix(hr, hr_d, metric_prefix);
 
     if (metric_prefix != 0)
-        hash_rate = fmt::format("{:0.3f} MH/s", current_network_info.hash_rate/1.0e6);                 hash_rate = fmt::format("{:0.3f} {:c}H/s", hr_d, metric_prefix);
+        hash_rate = fmt::format("{:0.3f} {:c}H/s", hr_d, metric_prefix);
     else
         hash_rate = fmt::format("{:s} H/s", hr.str());
 
