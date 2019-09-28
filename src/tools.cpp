@@ -1048,7 +1048,7 @@ decrypt(const std::string &ciphertext,
     }
 
     crypto::chacha_key key;
-    crypto::generate_chacha_key(&skey, sizeof(skey), key);
+    crypto::generate_chacha_key(&skey, sizeof(skey), key, 1);
 
     const crypto::chacha_iv &iv = *(const crypto::chacha_iv*)&ciphertext[0];
 
@@ -1272,4 +1272,31 @@ tx_to_hex(transaction const& tx)
     return epee::string_tools::buff_to_hex_nodelimer(t_serializable_object_to_blob(tx));
 }
 
+    void get_metric_prefix(cryptonote::difficulty_type hr, double& hr_d, char& prefix)
+    {
+        if (hr < 1000)
+        {
+            prefix = 0;
+            return;
+        }
+        static const char metric_prefixes[4] = { 'k', 'M', 'G', 'T' };
+        for (size_t i = 0; i < sizeof(metric_prefixes); ++i)
+        {
+            if (hr < 1000000)
+            {
+                hr_d = hr.convert_to<double>() / 1000;
+                prefix = metric_prefixes[i];
+                return;
+            }
+            hr /= 1000;
+        }
+        prefix = 0;
+    }
+    
+    cryptonote::difficulty_type
+    make_difficulty(uint64_t low, uint64_t high)
+    {
+        return (cryptonote::difficulty_type(high) << 64) + low;
+    }
+    
 }

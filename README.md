@@ -14,19 +14,26 @@ Alternative block explorers:
 
 - [http://aeon.lol/](http://aeon.lol/)
 - [https://aeonblockexplorer.com/](https://aeonblockexplorer.com/)
+- [https://aeonblockchecker.ninja:8081](https://aeonblockchcker.ninja:8081)
 
 
-## Compilation on Ubuntu 16.04
+## Compilation on Ubuntu 16.04 and 18.04
 
 ##### Compile latest Aeon development version
 
 Download and compile recent Aeon into your home folder:
 
 ```bash
-# first install aeon dependecines
+# first install aeon dependencies
 sudo apt update
 
+For 16.04
+
 sudo apt install git build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libcurl4-openssl-dev libgtest-dev libreadline-dev libzmq3-dev libsodium-dev libpcsclite-dev
+
+For 18.04
+
+sudo apt update && sudo apt install build-essential cmake git pkg-config libboost-all-dev libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind-dev liblzma-dev libreadline-dev libldns-dev libexpat1-dev doxygen graphviz libpcsclite-dev libpgm-dev libnorm-dev
 
 # go to home folder
 cd ~
