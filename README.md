@@ -1,20 +1,19 @@
 # Onion Aeon Blockchain Explorer
 
-The Onion Monero Blockchain Explorer was ported to Aeon. The port was
-conducted by [stoffu](https://github.com/moneroexamples/onion-monero-blockchain-explorer/pull/118).
+The Onion Monero Blockchain Explorer was ported to Aeon. The port was conducted by [stoffu](https://github.com/moneroexamples/onion-monero-blockchain-explorer/pull/118) and then forked to the Aeon community repository.
 
 
 ## Addresses
 
 Mainnet
 
- - [https://aeonblocks.com/](https://aeonblocks.com/)
+ - [https://aeonblocks.com](https://aeonblocks.com/)
 
 Alternative block explorers:
 
-- [http://aeon.lol/](http://aeon.lol/)
-- [https://aeonblockexplorer.com/](https://aeonblockexplorer.com/)
-- [https://aeonblockchecker.ninja:8081](https://aeonblockchcker.ninja:8081)
+- [http://aeon.lol](http://162.210.173.150:80801/)
+- [https://aeonblockexplorer.com](https://aeonblockexplorer.com/)
+- [https://aeonblockchecker.ninja](https://aeonblockchcker.ninja:8081/)
 
 
 ## Compilation on Ubuntu 16.04 and 18.04
