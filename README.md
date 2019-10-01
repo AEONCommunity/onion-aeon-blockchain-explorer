@@ -7,13 +7,14 @@ The Onion Monero Blockchain Explorer was ported to Aeon. The port was conducted 
 
 Mainnet
 
- - [https://aeonblocks.com](https://aeonblocks.com/)
+ - [https://aeonblocks.com](https://aeonblocks.com/) Block explorer not operational as of Aeon V0.12.9.0
 
 Alternative block explorers:
 
-- [http://aeon.lol](http://162.210.173.150:80801/)
+- [http://aeon.lol](http://162.210.173.150)
 - [https://aeonblockexplorer.com](https://aeonblockexplorer.com/)
-- [https://aeonblockchecker.ninja](https://aeonblockchcker.ninja:8081/)
+- [https://aeonblockchecker.ninja](https://aeonblockchecker.ninja:8081/)
+- [https://www.aeonstats.com](https://www.aeonstats.com/)
 
 
 ## Compilation on Ubuntu 16.04 and 18.04
