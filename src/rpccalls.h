@@ -47,7 +47,7 @@ struct has_destructor
 
 namespace cryptonote
 {
-// declare struct in monero's cryptonote namespace.
+// declare struct in Aeons's cryptonote namespace.
 // monero should provide definition for this,
 // but we need to have it declared as we are going to
 // check if its definition exist or not. depending on this
@@ -156,14 +156,14 @@ public:
 
             if (!err.empty())
             {
-                cerr << "Error connecting to Monero deamon due to "
+                cerr << "Error connecting to Aeon deamon due to "
                      << err << endl;
                 return false;
             }
         }
         else
         {
-            cerr << "Error connecting to Monero deamon at "
+            cerr << "Error connecting to Aeon deamon at "
                  << deamon_url << endl;
             return false;
         }
