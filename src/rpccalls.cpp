@@ -267,41 +267,6 @@ rpccalls::get_hardfork_info(COMMAND_RPC_HARD_FORK_INFO::response& response)
     return true;
 }
 
-
-
-bool
-    if (r)
-    {
-        if (resp_t.result.status == CORE_RPC_STATUS_BUSY)
-        {
-            err = "daemon is busy. Please try again later.";
-        }
-        else if (resp_t.result.status != CORE_RPC_STATUS_OK)
-        {
-            err = resp_t.result.status;
-        }
-
-        if (!err.empty())
-        {
-            cerr << "Error connecting to Aeon deamon due to "
-                 << err << endl;
-            return false;
-        }
-    }
-    else
-    {
-        cerr << "Error connecting to Aeon deamon at "
-             << deamon_url << endl;
-        return false;
-    }
-
-    fee = resp_t.result.fee;
-
-    return true;
-}
-
-
-
 bool
 rpccalls::get_block(string const& blk_hash, block& blk, string& error_msg)
 {
