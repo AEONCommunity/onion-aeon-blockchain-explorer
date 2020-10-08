@@ -7,14 +7,10 @@ The Onion Monero Blockchain Explorer was ported to Aeon. The port was conducted 
 
 Mainnet
 
- - [https://aeonblocks.com](https://aeonblocks.com/) Block explorer not operational as of Aeon V0.12.9.0
-
-Alternative block explorers:
-
 - [http://aeon.lol](http://162.210.173.150)
 - [https://aeonblockexplorer.com](https://aeonblockexplorer.com/)
 - [https://aeonblockchecker.ninja](https://aeonblockchecker.ninja:8081/)
-- [https://www.aeonstats.com](https://www.aeonstats.com/)
+- [https://www.aeonstats.com](https://www.aeonstats.com/) - offline
 
 
 ## Compilation on Ubuntu 16.04 and 18.04
@@ -29,11 +25,11 @@ sudo apt update
 
 For 16.04
 
-sudo apt install git build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libcurl4-openssl-dev libgtest-dev libreadline-dev libzmq3-dev libsodium-dev libpcsclite-dev
+sudo apt install git build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libcurl4-openssl-dev libgtest-dev libreadline-dev libzmq3-dev libsodium-dev libhidapi-dev libhidapi-libusb0
 
 For 18.04
 
-sudo apt update && sudo apt install build-essential cmake git pkg-config libboost-all-dev libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind-dev liblzma-dev libreadline-dev libldns-dev libexpat1-dev doxygen graphviz libpcsclite-dev libpgm-dev libnorm-dev
+sudo apt update && sudo apt install build-essential cmake git pkg-config libboost-all-dev libssl-dev libzmq3-dev libunbound-dev libsodium-dev libunwind-dev liblzma-dev libreadline-dev libldns-dev libexpat1-dev doxygen graphviz libhidapi-dev libhidapi-libusb0 libpgm-dev libnorm-dev libcurl3-dev
 
 # go to home folder
 cd ~
